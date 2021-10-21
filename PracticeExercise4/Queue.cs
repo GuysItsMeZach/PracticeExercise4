@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace PracticeExercise4
@@ -40,23 +40,24 @@ namespace PracticeExercise4
             linkedList.AddLast(item);
         }
 
-
         public override string ToString()
         {
-            string result =  "<Back> ";
+            string result = "<Back> ";
 
             var currentNode = linkedList.Last;
             while (currentNode != null)
             {
                 result += currentNode.Value;
-                if(currentNode.Previous != null)
-                {
-                    result += " → ";
-                }
+                if (currentNode.Previous != null)
+                    if (currentNode.Previous != null)
+                    {
+                        result += " → ";
+                    }
                 currentNode = currentNode.Previous;
             }
 
             result += " <Front>";
+
 
             return result;
         }
