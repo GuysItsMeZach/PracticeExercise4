@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 
 namespace PracticeExercise4
@@ -16,9 +17,24 @@ namespace PracticeExercise4
 
         public int Length => linkedList.Count;
 
+        public T Front => linkedList.First.Value;
+
+        public T Back => linkedList.Last.Value;
+
         public T Peek()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            //if (IsEmpty) 
+            //{
+            //    throw new EmptyStackException();
+            //}
+           
+            
+            T peekstack = linkedList.First.Value;
+            linkedList.RemoveFirst();
+            return peekstack;
+            
+
         }
 
         public T Pop()
@@ -45,13 +61,26 @@ namespace PracticeExercise4
 
             var currentNode = linkedList.Last;
 
+
+            while (currentNode != null)
+
             while( currentNode != null)
+
             {
                 result += currentNode.Value + "\n";
                 currentNode = currentNode.Previous;
             }
 
             return result;
+
+
         }
-    }
-}
+
+
+        }
+
+
+        }
+    
+
+
